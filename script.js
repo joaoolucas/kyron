@@ -51,7 +51,6 @@ function updateName() {
     const prompts = document.querySelectorAll('.terminal-prompt');
     
     addGlitchEffect(nameElement);
-    typeWriterEffect(prompts[prompts.length - 1], '> Generating new identity...');
     
     let counter = 0;
     const glitchInterval = setInterval(() => {
@@ -64,7 +63,6 @@ function updateName() {
         } else {
             clearInterval(glitchInterval);
             nameElement.textContent = newName;
-            typeWriterEffect(prompts[prompts.length - 1], '> Ready for name generation_');
         }
     }, 50);
 }
