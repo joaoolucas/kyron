@@ -1,5 +1,5 @@
-const prefixes = ['Cyber', 'Neon', 'Zero', 'Ghost', 'Data', 'Void', 'Night', 'Glitch', 'Pixel', 'Chrome'];
-const suffixes = ['Runner', 'Blade', 'Shadow', 'Punk', 'Wire', 'Sync', 'Drift', 'Pulse', 'Storm', 'Hex'];
+const prefixes = ['Cyber', 'Neon', 'Zero', 'Ghost', 'Data', 'Void', 'Night', 'Glitch', 'Pixel', 'Chrome', 'Quantum', 'Neural', 'Binary', 'Crypto', 'Tech'];
+const suffixes = ['Runner', 'Blade', 'Shadow', 'Punk', 'Wire', 'Sync', 'Drift', 'Pulse', 'Storm', 'Hex', 'Ghost', 'Mind', 'Flux', 'Code', 'Net'];
 const separators = ['_', '-', '.', '/', '\\'];
 
 function generateName() {
@@ -11,9 +11,7 @@ function generateName() {
 
 function addGlitchEffect(element) {
     element.classList.add('glitch');
-    setTimeout(() => {
-        element.classList.remove('glitch');
-    }, 500);
+    setTimeout(() => element.classList.remove('glitch'), 500);
 }
 
 function updateStats() {
@@ -21,13 +19,9 @@ function updateStats() {
     const cpuStat = document.querySelector('.cpu-stat');
     const status = document.querySelector('.status');
     
-    // Random memory usage
     memoryStat.textContent = `${(Math.random() * 100).toFixed(1)} TB`;
-    
-    // Random CPU usage
     cpuStat.textContent = `${(85 + Math.random() * 15).toFixed(1)}%`;
     
-    // Randomly flicker status
     if (Math.random() > 0.9) {
         status.textContent = 'UNSTABLE';
         status.style.color = '#ff0000';
@@ -41,26 +35,24 @@ function updateStats() {
 function typeWriterEffect(element, text, speed = 50) {
     let i = 0;
     element.textContent = '';
-    function type() {
+    const type = () => {
         if (i < text.length) {
             element.textContent += text.charAt(i);
             i++;
             setTimeout(type, speed);
         }
-    }
+    };
     type();
 }
 
 function updateName() {
     const nameElement = document.getElementById('generatedName');
     const newName = generateName();
-    addGlitchEffect(nameElement);
-    
-    // Add terminal-style text before generation
     const prompts = document.querySelectorAll('.terminal-prompt');
+    
+    addGlitchEffect(nameElement);
     typeWriterEffect(prompts[prompts.length - 1], '> Generating new identity...');
     
-    // Create glitch effect by rapidly changing text
     let counter = 0;
     const glitchInterval = setInterval(() => {
         if (counter < 5) {
@@ -68,7 +60,7 @@ function updateName() {
                 .map(char => Math.random() > 0.5 ? String.fromCharCode(Math.random() * 32 + 65) : char)
                 .join('');
             counter++;
-            updateStats(); // Update stats during glitch
+            updateStats();
         } else {
             clearInterval(glitchInterval);
             nameElement.textContent = newName;
@@ -77,22 +69,25 @@ function updateName() {
     }, 50);
 }
 
-// Add cursor blink effect
-setInterval(() => {
-    const cursors = document.querySelectorAll('.cursor');
-    cursors.forEach(cursor => {
-        cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+// Initialize event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    const generateBtn = document.getElementById('generateBtn');
+    const glitchAgainBtn = document.getElementById('glitchAgainBtn');
+    const buttons = document.querySelectorAll('button');
+
+    generateBtn.addEventListener('click', updateName);
+    glitchAgainBtn.addEventListener('click', updateName);
+    buttons.forEach(button => {
+        button.addEventListener('mouseover', () => addGlitchEffect(button));
     });
-}, 500);
 
-// Update stats periodically
-setInterval(updateStats, 1000);
+    // Start periodic updates
+    setInterval(() => {
+        const cursors = document.querySelectorAll('.cursor');
+        cursors.forEach(cursor => {
+            cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+        });
+    }, 500);
 
-document.getElementById('generateBtn').addEventListener('click', updateName);
-document.getElementById('glitchAgainBtn').addEventListener('click', updateName);
-
-// Add hover glitch effect to buttons
-const buttons = document.querySelectorAll('button');
-buttons.forEach(button => {
-    button.addEventListener('mouseover', () => addGlitchEffect(button));
+    setInterval(updateStats, 1000);
 }); 

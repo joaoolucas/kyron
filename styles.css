@@ -7,26 +7,42 @@
 body {
     margin: 0;
     padding: 0;
-    background: #000;
+    background: #0a0a0a !important;
     color: var(--neon-red);
     font-family: 'Courier New', monospace;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('https://images.unsplash.com/photo-1480944657103-7fed22359e1d?auto=format&fit=crop&q=80');
-    background-size: cover;
-    background-position: center;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.9) 0px,
+            rgba(0, 0, 0, 0.9) 1px,
+            transparent 1px,
+            transparent 2px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 0, 0, 0.03) 0px,
+            rgba(255, 0, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 2px
+        ) !important;
+    background-size: 2px 2px !important;
     overflow: hidden;
 }
 
 .container {
     text-align: center;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.95);
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 0 20px var(--neon-red);
+    border: 1px solid var(--neon-red);
+    max-width: 600px;
+    width: 90%;
 }
 
 .name-display {
@@ -103,4 +119,28 @@ button:hover {
 @keyframes rain {
     0% { background-position: 0 0; }
     100% { background-position: 0 20px; }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.terminal-lines {
+    background: linear-gradient(
+        rgba(255, 0, 0, 0.05) 50%,
+        rgba(0, 0, 0, 0.2) 50%
+    );
+    background-size: 100% 4px;
+}
+
+.scan-lines {
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 0, 0, 0.03) 50%,
+        transparent
+    );
 } 
