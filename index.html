@@ -7,14 +7,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="terminal-lines"></div>
     <div class="container">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="terminal-title">KYRON_FLUX.exe</div>
+        </div>
         <div class="name-display">
+            <div class="terminal-prompt">> System initialized...</div>
             <h2 class="app-title">KYRON FLUX</h2>
+            <div class="terminal-prompt">> Ready for name generation_<span class="cursor">█</span></div>
             <h1 class="generated-name" id="generatedName">CLICK_TO_HACK</h1>
         </div>
-        <button class="generate-btn" id="generateBtn">GENERATE</button>
-        <button class="glitch-again-btn" id="glitchAgainBtn">GLITCH AGAIN</button>
+        <button class="generate-btn" id="generateBtn">> GENERATE</button>
+        <button class="glitch-again-btn" id="glitchAgainBtn">> GLITCH</button>
+        <div class="terminal-stats">
+            <div>> Memory: <span class="memory-stat">32.4 TB</span></div>
+            <div>> CPU: <span class="cpu-stat">99.9%</span></div>
+            <div>> Status: <span class="status">OPERATIONAL</span></div>
+        </div>
     </div>
+    <div class="scan-lines"></div>
     <div class="rain"></div>
     <script src="script.js"></script>
 </body>
