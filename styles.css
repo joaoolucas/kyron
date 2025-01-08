@@ -37,12 +37,13 @@ body {
     text-align: center;
     z-index: 1;
     background: rgba(0, 0, 0, 0.95);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 5px;
     box-shadow: 0 0 20px var(--neon-red);
     border: 1px solid var(--neon-red);
     max-width: 600px;
     width: 90%;
+    margin: 1rem;
 }
 
 .name-display {
@@ -179,4 +180,100 @@ button:hover {
 
 .terminal-title {
     margin: 0 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .generated-name {
+        font-size: 2rem;
+    }
+
+    button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        margin: 0.5rem;
+    }
+
+    .terminal-header {
+        padding: 8px;
+        flex-wrap: wrap;
+    }
+
+    .terminal-title {
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+
+    .social-icon {
+        font-size: 1rem;
+    }
+
+    .terminal-stats {
+        font-size: 0.9rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .terminal-buttons span {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+
+    .generated-name {
+        font-size: 1.5rem;
+    }
+
+    .terminal-stats {
+        font-size: 0.8rem;
+    }
+
+    .terminal-header {
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .terminal-buttons {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .terminal-title {
+        order: 2;
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .social-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin: 5px 0;
+    }
+}
+
+@media (hover: none) {
+    button:active {
+        background: var(--neon-red);
+        color: #000;
+        box-shadow: 0 0 20px var(--neon-red);
+    }
+
+    .social-icon:active {
+        opacity: 1;
+        text-shadow: 0 0 10px var(--neon-red);
+        transform: scale(1.1);
+    }
 } 
