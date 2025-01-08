@@ -1,5 +1,17 @@
-const prefixes = ['Cyber', 'Neon', 'Zero', 'Ghost', 'Data', 'Void', 'Night', 'Glitch', 'Pixel', 'Chrome', 'Quantum', 'Neural', 'Binary', 'Crypto', 'Tech'];
-const suffixes = ['Runner', 'Blade', 'Shadow', 'Punk', 'Wire', 'Sync', 'Drift', 'Pulse', 'Storm', 'Hex', 'Ghost', 'Mind', 'Flux', 'Code', 'Net'];
+const prefixes = [
+    'Cyber', 'Neon', 'Zero', 'Ghost', 'Data', 'Void', 'Night', 'Glitch', 'Pixel', 'Chrome', 
+    'Quantum', 'Neural', 'Binary', 'Crypto', 'Tech', 'Nexus', 'Synth', 'Vector', 'Digital',
+    'Plasma', 'Static', 'Circuit', 'Nano', 'Matrix', 'Echo', 'Hyper', 'Omega', 'Alpha',
+    'Cyber', 'Flux', 'Nova', 'Pulse', 'Rad', 'Retro', 'Solar', 'Void', 'Wave', 'Zen'
+];
+
+const suffixes = [
+    'Runner', 'Blade', 'Shadow', 'Punk', 'Wire', 'Sync', 'Drift', 'Pulse', 'Storm', 'Hex',
+    'Ghost', 'Mind', 'Flux', 'Code', 'Net', 'Blade', 'Core', 'Edge', 'Flow', 'Grid',
+    'Hunter', 'Jack', 'Knight', 'Link', 'Mancer', 'Node', 'Phantom', 'Quest', 'Rage',
+    'Slayer', 'Tech', 'Unit', 'Viper', 'Ward', 'X', 'Zero', 'Zone', 'Wraith'
+];
+
 const separators = ['_', '-', '.', '/', '\\'];
 
 function generateName() {
