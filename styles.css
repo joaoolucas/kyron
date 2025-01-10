@@ -158,28 +158,46 @@ button:hover {
 
 .social-links {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     margin-left: auto;
 }
 
 .social-icon {
     color: var(--neon-blue);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
-    opacity: 0.7;
-    filter: grayscale(100%) sepia(100%) hue-rotate(180deg) saturate(2000%) brightness(100%);
+    opacity: 0.8;
+    padding: 5px 10px;
+    border: 1px solid var(--neon-blue);
+    border-radius: 3px;
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .social-icon:hover {
     opacity: 1;
     text-shadow: 0 0 10px var(--neon-blue);
-    transform: scale(1.1);
-    filter: grayscale(100%) sepia(100%) hue-rotate(180deg) saturate(2000%) brightness(150%);
+    transform: scale(1.05);
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 15px var(--neon-blue);
 }
 
 .terminal-title {
+    color: var(--neon-bright-blue);
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--neon-blue),
+                 0 0 20px var(--neon-blue),
+                 0 0 30px var(--neon-blue);
     margin: 0 20px;
+    padding: 5px 15px;
+    border: 1px solid var(--neon-blue);
+    background: rgba(0, 247, 255, 0.1);
+    border-radius: 3px;
 }
 
 @media screen and (max-width: 768px) {
