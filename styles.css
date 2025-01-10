@@ -159,6 +159,7 @@ button:hover {
 .social-links {
     display: flex;
     margin-left: auto;
+    align-items: center;
 }
 
 .social-icon {
@@ -197,6 +198,33 @@ button:hover {
     border: 1px solid var(--neon-blue);
     background: rgba(0, 247, 255, 0.1);
     border-radius: 3px;
+}
+
+.ca-soon {
+    color: var(--neon-blue);
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border: 1px solid var(--neon-blue);
+    border-radius: 3px;
+    background: rgba(0, 247, 255, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 15px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 10px var(--neon-blue);
+        box-shadow: 0 0 15px var(--neon-blue);
+    }
+    100% {
+        opacity: 0.6;
+    }
 }
 
 @media screen and (max-width: 768px) {
